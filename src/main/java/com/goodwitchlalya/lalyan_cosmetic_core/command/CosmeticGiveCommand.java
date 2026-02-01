@@ -43,6 +43,8 @@ public class CosmeticGiveCommand extends AbstractPlayerCommand {
         if (name != null) {
             if (unlocked.add(this.cosmeticName.get(commandContext))) {
                 commandContext.sendMessage(Message.raw("Added "+ name).color(Color.GREEN));
+
+                store.replaceComponent(ref, UnlockedCosmeticsComponent.getComponentType(), unlocked);
             }
         }
     }

@@ -77,17 +77,23 @@ $C.@PageOverlay {
               Anchor: (Width: 100, Height: 100);
               Background: PatchStyle(TexturePath: "../../Common/SlotDefault.png");
               ScrollbarStyle: $C.@DefaultScrollbarStyle;
+
+              AssetImage #WithdrawIcon {
+                Padding: (Top: 15, Left: 15, Right: 15, Bottom: 15);
+                AssetPath: "Icons/ItemsGenerated/Bone_Pile.png";
+                Visible: false;
+              }
             }
 
             Label #WithdrawSelectionLabel {
               Padding: (Vertical: 10);
               FlexWeight: 1;
               Text: "";
-              Style: LabelStyle(...$C.@PopupTitleStyle, FontSize: 20, HorizontalAlignment: Start, VerticalAlignment: Center);
+              Style: LabelStyle(FontSize: 20, HorizontalAlignment: Start, VerticalAlignment: Center);
               Anchor: (Left: 10, Right: 10);
             }
 
-            $C.@CancelTextButton {
+            $C.@CancelTextButton #WithdrawSelectionButton {
               Anchor: (Right: 10, Height: $C.@DefaultButtonHeight);
               Text: "Withdraw";
               Disabled: true;

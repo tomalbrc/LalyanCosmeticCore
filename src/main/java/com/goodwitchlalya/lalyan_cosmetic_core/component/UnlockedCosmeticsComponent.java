@@ -60,7 +60,7 @@ public class UnlockedCosmeticsComponent implements Component<EntityStore> {
         return internal.contains(id);
     }
 
-    public void removeCosmetic(String id) {
-        internal.removeIf(id::equals);
+    public boolean removeCosmetic(String id) {
+        return internal.remove(id);
     }
 }
