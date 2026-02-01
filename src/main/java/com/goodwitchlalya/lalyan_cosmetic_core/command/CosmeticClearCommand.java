@@ -16,9 +16,6 @@ import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
  * Requires OP permissions.
  */
 public class CosmeticClearCommand extends AbstractPlayerCommand {
-    
-    private final Universe universe = Universe.get();
-    
     /**
      * Constructor for the 'clear' subcommand.
      * Defines the command's description and permissions.
@@ -34,10 +31,6 @@ public class CosmeticClearCommand extends AbstractPlayerCommand {
      */
     @Override
     protected void execute(@NonNullDecl CommandContext commandContext, @NonNullDecl Store<EntityStore> store, @NonNullDecl Ref<EntityStore> ref, @NonNullDecl PlayerRef playerRef, @NonNullDecl World world) {
-        // Execute the clearing logic on the world's main thread.
-        universe.getWorld(playerRef.getWorldUuid()).execute(() -> {
-            AttachmentsRegistry.get().clearAll(ref);
-        });
+        AttachmentsRegistry.get().clearAll(ref);
     }
-    
 }

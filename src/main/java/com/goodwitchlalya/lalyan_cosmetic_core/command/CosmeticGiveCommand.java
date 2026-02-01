@@ -1,35 +1,34 @@
 package com.goodwitchlalya.lalyan_cosmetic_core.command;
 
-import com.goodwitchlalya.lalyan_cosmetic_core.util.AttachmentsRegistry;
+import com.goodwitchlalya.lalyan_cosmetic_core.component.UnlockedCosmeticsComponent;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
+import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
-import com.hypixel.hytale.server.core.command.system.arguments.system.OptionalArg;
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayerCommand;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
-import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
+
+import java.awt.*;
 
 /**
  * Subcommand to manually apply a cosmetic to a player.
  * Requires OP permissions.
  */
-public class CosmeticApplyCommand extends AbstractPlayerCommand {
+public class CosmeticGiveCommand extends AbstractPlayerCommand {
     private RequiredArg<String> cosmeticName;
-    private OptionalArg<String> override;
 
     /**
      * Constructor for the 'apply' subcommand.
      * Defines the command's arguments and permissions.
      */
-    public CosmeticApplyCommand() {
-        super("apply", "Manually applies a cosmetic");
+    public CosmeticGiveCommand() {
+        super("give", "Unlocks a cosmetic for the player");
         this.cosmeticName = this.withRequiredArg("cosmetic name", "The cosmetic Id", ArgTypes.STRING);
-        this.override = this.withOptionalArg("override", "whether to override other cosmetics, or stack the new one on top of them", ArgTypes.STRING);
         this.setPermissionGroups("OP");
     }
 
@@ -39,7 +38,12 @@ public class CosmeticApplyCommand extends AbstractPlayerCommand {
      */
     @Override
     protected void execute(@NonNullDecl CommandContext commandContext, @NonNullDecl Store<EntityStore> store, @NonNullDecl Ref<EntityStore> ref, @NonNullDecl PlayerRef playerRef, @NonNullDecl World world) {
-        boolean overrideBool = (override.get(commandContext) == null) || !override.get(commandContext).equals("no");
-        AttachmentsRegistry.get().addCosmetic(ref, cosmeticName.get(commandContext), null, null, !overrideBool);
+        var unlocked = store.ensureAndGetComponent(ref, UnlockedCosmeticsComponent.getComponentType());
+        var name = this.cosmeticName.get(commandContext);
+        if (name != null) {
+            if (unlocked.add(this.cosmeticName.get(commandContext))) {
+                commandContext.sendMessage(Message.raw("Added "+ name).color(Color.GREEN));
+            }
+        }
     }
 }

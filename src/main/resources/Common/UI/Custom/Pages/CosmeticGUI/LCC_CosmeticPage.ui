@@ -20,36 +20,82 @@ $Sounds = "../../Sounds.ui";
 $C.@PageOverlay {
     Background: #ffffff(0);
 
-    $C.@Container {
-        Anchor: (Width: 600, Height: 800, Right: 150);
+    Group {
+      LayoutMode: Middle;
+
+      $C.@Container {
+        Anchor: (Width: 600, Height: 590, Right: 150);
 
         #Title {
-            Group {
-                @StyledCheckBox #MultiSelect {
-                    #Name {
-                        Text: "Multi-Select";
-                    }
-                }
-
-                $C.@Title {
-                    @Text = "Customize Cosmetics";
-                }
-
-                $C.@HeaderSearch {}
+          Group {
+            @StyledCheckBox #MultiSelect {
+              #Name {
+                Text: "Multi-Select";
+              }
             }
+
+            $C.@Title {
+              @Text = "Customize Cosmetics";
+            }
+
+            $C.@HeaderSearch {}
+          }
         }
 
         #Content {
-            Group {
-                Anchor: (Top: 0);
-                FlexWeight: 1;
-                Group #CosmeticGrid {
-                    FlexWeight: 1;
-                    LayoutMode: TopScrolling;
-                    ScrollbarStyle: $C.@DefaultScrollbarStyle;
-                }
+          Group {
+            Anchor: (Top: 0);
+            FlexWeight: 1;
+            Group #CosmeticGrid {
+              FlexWeight: 1;
+              LayoutMode: TopScrolling;
+              ScrollbarStyle: $C.@DefaultScrollbarStyle;
             }
+          }
         }
+      }
+
+      $C.@Container {
+        Anchor: (Top: 10, Width: 600, Height: 200, Right: 150);
+
+        #Title {
+          Group {
+            $C.@Title {
+              @Text = "Selection";
+            }
+          }
+        }
+
+        #Content {
+
+          Group {
+            Anchor: (Top: 0);
+            Padding: (Vertical: 10);
+            LayoutMode: Left;
+
+            Group #WithdrawSelection {
+              Anchor: (Width: 100, Height: 100);
+              Background: PatchStyle(TexturePath: "../../Common/SlotDefault.png");
+              ScrollbarStyle: $C.@DefaultScrollbarStyle;
+            }
+
+            Label #WithdrawSelectionLabel {
+              Padding: (Vertical: 10);
+              FlexWeight: 1;
+              Text: "";
+              Style: LabelStyle(...$C.@PopupTitleStyle, FontSize: 20, HorizontalAlignment: Start, VerticalAlignment: Center);
+              Anchor: (Left: 10, Right: 10);
+            }
+
+            $C.@CancelTextButton {
+              Anchor: (Right: 10, Height: $C.@DefaultButtonHeight);
+              Text: "Withdraw";
+              Disabled: true;
+            }
+          }
+        }
+      }
+
     }
 
     $C.@Container #LLSidePanel {

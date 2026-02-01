@@ -10,7 +10,6 @@ import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
-
 /**
  * Main command for the cosmetic system.
  * This command acts as a container for all cosmetic-related subcommands.
@@ -23,10 +22,12 @@ public class CosmeticCommand extends AbstractPlayerCommand {
      */
     public CosmeticCommand() {
         super("cosmetic", "Does nothing. Use the subcommands!");
+        this.addSubCommand(new CosmeticGiveCommand());
         this.addSubCommand(new CosmeticApplyCommand());
+        this.addSubCommand(new CosmeticRemoveCommand());
         this.addSubCommand(new CosmeticClearCommand());
-        this.addSubCommand(new CosmeticReloadCommand());
         this.addSubCommand(new CosmeticListCommand());
+        this.addSubCommand(new CosmeticListUnlockedCommand());
         this.addSubCommand(new CosmeticChangeCommand());
         this.addSubCommand(new CosmeticReskinCommand());
         this.setPermissionGroup(GameMode.Adventure);
