@@ -482,11 +482,7 @@ public class CosmeticPage extends InteractiveCustomUIPage<CosmeticPage.Data> {
             return;
         }
 
-        if (data.multiSelect) {
-            this.singleSelect = !this.singleSelect;
-            refreshUI();
-            return;
-        }
+        this.singleSelect = !data.multiSelect;
 
         if (data.search != null) {
             this.search = data.search;
@@ -528,6 +524,8 @@ public class CosmeticPage extends InteractiveCustomUIPage<CosmeticPage.Data> {
             if (didRemove) {
                 store.replaceComponent(ref, UnlockedCosmeticsComponent.getComponentType(), comp);
                 ItemUtils.dropItem(ref, new ItemStack(asset.getItemId(), 1), ref.getStore());
+
+                AttachmentsRegistry.get().removeCosmetic(ref, selectedId, !singleSelect);
             }
         }
     }
@@ -587,10 +585,12 @@ public class CosmeticPage extends InteractiveCustomUIPage<CosmeticPage.Data> {
             this.selectedId = data.cosmeticId;
         } else {
             // Equip
-            if (data.cosmeticId.isBlank()) {
+            if (data.cosmeticId == null || data.cosmeticId.isBlank()) {
                 // Vanish logic
                 var current = AttachmentsRegistry.get().getEquipped(ref, currentSlot);
-                if (current != null) AttachmentsRegistry.get().removeCosmetic(ref, current.getId(), !singleSelect);
+                if (current != null)
+                    AttachmentsRegistry.get().removeCosmetic(ref, current.getId(), !singleSelect);
+
                 this.selectedId = null;
             } else {
                 this.selectedId = data.cosmeticId;

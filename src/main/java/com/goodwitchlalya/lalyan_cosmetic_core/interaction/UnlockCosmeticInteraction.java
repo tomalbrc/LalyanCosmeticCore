@@ -46,15 +46,16 @@ public class UnlockCosmeticInteraction extends SimpleInstantInteraction {
             return;
         }
 
-        consumeHeldItem(ctx);
-
         var comp = commandBuffer.ensureAndGetComponent(ref, UnlockedCosmeticsComponent.getComponentType());
         if (comp.add(cosmeticId)) {
+            consumeHeldItem(ctx);
+
             if (message != null) {
                 for (String s : message) {
                     player.sendMessage(TinyMsg.parse(s));
                 }
             }
+
             commandBuffer.replaceComponent(ref, UnlockedCosmeticsComponent.getComponentType(), comp);
         }
     }
