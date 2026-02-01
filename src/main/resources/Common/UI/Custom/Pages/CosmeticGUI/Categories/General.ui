@@ -38,7 +38,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Underwear.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Underwear.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Underwear.png"
                 )
             );
         }
@@ -77,7 +77,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Face.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Face.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Face.png"
                 )
             );
         }
@@ -117,7 +117,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/FaceDetails.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/FaceDetails.png"
+                  Background: "../../../Common/Categories/Categories/Selected/FaceDetails.png"
                 )
             );
         }
@@ -156,7 +156,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Mouth.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Mouth.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Mouth.png"
                 )
             );
         }
@@ -195,7 +195,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Ears.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Ears.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Ears.png"
                 )
             );
         }

@@ -15,7 +15,6 @@ import com.hypixel.hytale.server.core.asset.common.CommonAssetValidator;
 import com.hypixel.hytale.server.core.asset.type.item.config.AssetIconProperties;
 import com.hypixel.hytale.server.core.asset.type.item.config.Item;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAttachment;
-import com.hypixel.hytale.server.npc.asset.builder.validators.asset.ItemExistsValidator;
 
 import java.util.Arrays;
 import java.util.List;
@@ -188,5 +187,9 @@ public class CustomCosmetic implements JsonAssetWithMap<String, DefaultAssetMap<
 
     public static DefaultAssetMap<String, CustomCosmetic> getAssetMap() {
         return CustomCosmetic.getAssetStore().getAssetMap();
+    }
+
+    public String getItemId() {
+        return this.itemId;
     }
 }

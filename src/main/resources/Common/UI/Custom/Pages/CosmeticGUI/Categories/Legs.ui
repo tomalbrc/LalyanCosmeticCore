@@ -38,7 +38,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Pants.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Pants.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Pants.png"
                 )
             );
         }
@@ -78,7 +78,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Overpants.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Overpants.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Overpants.png"
                 )
             );
         }
@@ -118,7 +118,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Shoes.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Shoes.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Shoes.png"
                 )
             );
         }

@@ -38,7 +38,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Undertops.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Undertops.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Undertops.png"
                 )
             );
         }
@@ -78,7 +78,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Overtops.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Overtops.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Overtops.png"
                 )
             );
         }
@@ -118,7 +118,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Gloves.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Gloves.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Gloves.png"
                 )
             );
         }
@@ -158,7 +158,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Tail.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Tail.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Tail.png"
                 )
             );
         }
@@ -198,7 +198,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Wings.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Wings.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Wings.png"
                 )
             );
         }

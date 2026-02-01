@@ -527,7 +527,7 @@ public class CosmeticPage extends InteractiveCustomUIPage<CosmeticPage.Data> {
             var didRemove = comp.removeCosmetic(selectedId);
             if (didRemove) {
                 store.replaceComponent(ref, UnlockedCosmeticsComponent.getComponentType(), comp);
-                ItemUtils.dropItem(ref, new ItemStack(asset.getId(), 1), ref.getStore());
+                ItemUtils.dropItem(ref, new ItemStack(asset.getItemId(), 1), ref.getStore());
             }
         }
     }

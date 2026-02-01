@@ -33,7 +33,7 @@ Group {
                 Background: "../../../Common/Categories/Top/Selected/Torso.png"
             ),
             Hovered: (
-                Background: "../../../Common/Categories/Top/Torso.png"
+              Background: "../../../Common/Categories/Top/Selected/Torso.png"
             )
         );
         FlexWeight: 1;

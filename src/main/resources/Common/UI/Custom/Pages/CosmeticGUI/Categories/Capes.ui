@@ -38,7 +38,7 @@ Group {
                     Background: "../../../Common/Categories/Categories/Selected/Capes.png"
                 ),
                 Hovered: (
-                    Background: "../../../Common/Categories/Categories/Capes.png"
+                  Background: "../../../Common/Categories/Categories/Selected/Capes.png"
                 )
             );
         }
