@@ -10,7 +10,7 @@ configurations {
 }
 
 repositories {
-    maven { url "https://maven.hytale.com/release" }
+    maven { url "https://maven.hytale.com/pre-release" }
     maven { url "https://cursemaven.com" }
 
     flatDir {
@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.hypixel.hytale:Server:2026.01.28-87d03be09'
+    implementation 'com.hypixel.hytale:Server:latest.release'
 
     //compileOnly("curse.maven:simpleclaims-1405415:7540330") // 1.0.25
     implementation("curse.maven:multiplehud-1423634:7530266") // 1.0.4

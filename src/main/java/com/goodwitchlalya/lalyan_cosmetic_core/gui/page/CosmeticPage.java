@@ -635,7 +635,7 @@ public class CosmeticPage extends InteractiveCustomUIPage<CosmeticPage.Data> {
 
         public static final BuilderCodec<Data> CODEC = BuilderCodec.builder(Data.class, Data::new)
                 .append(new KeyedCodec<>("Action", BuilderCodec.STRING), (data, v) -> data.action = v, data -> data.action).add()
-                .append(new KeyedCodec<>("MultiSelect", BuilderCodec.BOOLEAN), (data, v) -> data.multiSelect = v, data -> data.multiSelect).add()
+                .append(new KeyedCodec<>("@MultiSelect", BuilderCodec.BOOLEAN), (data, v) -> data.multiSelect = v, data -> data.multiSelect).add()
                 .append(new KeyedCodec<>("@Search", BuilderCodec.STRING), (data, v) -> data.search = v, data -> data.search).add()
                 .append(new KeyedCodec<>("VariantId", BuilderCodec.STRING), (data, v) -> data.variantId = v, data -> data.variantId).add()
                 .append(new KeyedCodec<>("GradientId", BuilderCodec.STRING), (data, v) -> data.gradientId = v, data -> data.gradientId).add()

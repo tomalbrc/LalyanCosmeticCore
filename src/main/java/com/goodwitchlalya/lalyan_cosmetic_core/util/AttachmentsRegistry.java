@@ -442,7 +442,30 @@ public class AttachmentsRegistry {
         restoreSkinWithOverrides(ref, attachments, overrides);
 
         // Create a new player model with the combined attachments.
-        Model newModel = new Model(player.getDisplayName() + "_CustomModel", model.getScale(), model.getRandomAttachmentIds(), attachments.toArray(new ModelAttachment[0]), model.getBoundingBox(), model.getModel(), model.getTexture(), model.getGradientSet(), model.getGradientId(), model.getEyeHeight(), model.getCrouchOffset(), model.getAnimationSetMap(), model.getCamera(), model.getLight(), model.getParticles(), model.getTrails(), model.getPhysicsValues(), model.getDetailBoxes(), model.getPhobia(), model.getPhobiaModelAssetId());
+        Model newModel = new Model(
+                player.getDisplayName() + "_CustomModel",
+                model.getScale(),
+                model.getRandomAttachmentIds(),
+                attachments.toArray(new ModelAttachment[0]),
+                model.getBoundingBox(),
+                model.getModel(),
+                model.getTexture(),
+                model.getGradientSet(),
+                model.getGradientId(),
+                model.getEyeHeight(),
+                model.getCrouchOffset(),
+                model.getSittingOffset(),
+                model.getSleepingOffset(),
+                model.getAnimationSetMap(),
+                model.getCamera(),
+                model.getLight(),
+                model.getParticles(),
+                model.getTrails(),
+                model.getPhysicsValues(),
+                model.getDetailBoxes(),
+                model.getPhobia(),
+                model.getPhobiaModelAssetId()
+        );
 
         // Apply the new model to the player.
         store.replaceComponent(ref, ModelComponent.getComponentType(), new ModelComponent(newModel));
@@ -811,7 +834,6 @@ public class AttachmentsRegistry {
         clearCosmetics(ref);
         clearCharacter(ref);
     }
-
 
     // Returns a sorted list of all registered cosmetic IDs.
     public List<String> getAttachmentsList() {
